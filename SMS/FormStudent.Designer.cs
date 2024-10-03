@@ -134,6 +134,7 @@ namespace SMS
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1230, 747);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -201,7 +202,7 @@ namespace SMS
             this.toolStripSeparator2,
             this.MenuItemDelete});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 106);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 139);
             // 
             // MenuItemAdd
             // 
@@ -220,6 +221,7 @@ namespace SMS
             this.MenuItemEdit.Name = "MenuItemEdit";
             this.MenuItemEdit.Size = new System.Drawing.Size(116, 30);
             this.MenuItemEdit.Text = "修改";
+            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
             // 
             // toolStripSeparator2
             // 
@@ -229,8 +231,9 @@ namespace SMS
             // MenuItemDelete
             // 
             this.MenuItemDelete.Name = "MenuItemDelete";
-            this.MenuItemDelete.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemDelete.Size = new System.Drawing.Size(240, 30);
             this.MenuItemDelete.Text = "删除";
+            this.MenuItemDelete.Click += new System.EventHandler(this.MenuItemDelete_Click);
             // 
             // FormStudent
             // 
