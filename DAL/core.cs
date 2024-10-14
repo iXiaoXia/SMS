@@ -25,5 +25,21 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString(), parameters);
         }
+
+        public DataSet GetCourseList(string CNO, string CName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select a.* from course a");
+            strSql.Append(" where  CNO like ?CNO and CName like ?CName");
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("?CNO", MySqlDbType.VarChar),
+                new MySqlParameter("?CName", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = "%" + CNO + "%";
+            parameters[1].Value = "%" + CName + "%";
+
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
+        }
     }
 }

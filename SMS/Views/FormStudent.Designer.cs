@@ -37,18 +37,18 @@ namespace SMS
             this.textBoxSNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeptNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeptNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -84,7 +84,7 @@ namespace SMS
             this.textBoxSName.Location = new System.Drawing.Point(484, 42);
             this.textBoxSName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSName.Name = "textBoxSName";
-            this.textBoxSName.Size = new System.Drawing.Size(212, 28);
+            this.textBoxSName.Size = new System.Drawing.Size(220, 28);
             this.textBoxSName.TabIndex = 3;
             // 
             // label2
@@ -102,7 +102,7 @@ namespace SMS
             this.textBoxSNO.Location = new System.Drawing.Point(106, 42);
             this.textBoxSNO.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSNO.Name = "textBoxSNO";
-            this.textBoxSNO.Size = new System.Drawing.Size(226, 28);
+            this.textBoxSNO.Size = new System.Drawing.Size(220, 28);
             this.textBoxSNO.TabIndex = 1;
             // 
             // label1
@@ -137,6 +137,49 @@ namespace SMS
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1230, 747);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemAdd,
+            this.toolStripSeparator1,
+            this.MenuItemEdit,
+            this.toolStripSeparator2,
+            this.MenuItemDelete});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 106);
+            // 
+            // MenuItemAdd
+            // 
+            this.MenuItemAdd.Name = "MenuItemAdd";
+            this.MenuItemAdd.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemAdd.Text = "新增";
+            this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
+            // 
+            // MenuItemEdit
+            // 
+            this.MenuItemEdit.Name = "MenuItemEdit";
+            this.MenuItemEdit.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemEdit.Text = "修改";
+            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(113, 6);
+            // 
+            // MenuItemDelete
+            // 
+            this.MenuItemDelete.Name = "MenuItemDelete";
+            this.MenuItemDelete.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemDelete.Text = "删除";
+            this.MenuItemDelete.Click += new System.EventHandler(this.MenuItemDelete_Click);
             // 
             // SNO
             // 
@@ -192,49 +235,6 @@ namespace SMS
             this.Address.ReadOnly = true;
             this.Address.Width = 125;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemAdd,
-            this.toolStripSeparator1,
-            this.MenuItemEdit,
-            this.toolStripSeparator2,
-            this.MenuItemDelete});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 139);
-            // 
-            // MenuItemAdd
-            // 
-            this.MenuItemAdd.Name = "MenuItemAdd";
-            this.MenuItemAdd.Size = new System.Drawing.Size(116, 30);
-            this.MenuItemAdd.Text = "新增";
-            this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
-            // 
-            // MenuItemEdit
-            // 
-            this.MenuItemEdit.Name = "MenuItemEdit";
-            this.MenuItemEdit.Size = new System.Drawing.Size(116, 30);
-            this.MenuItemEdit.Text = "修改";
-            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(113, 6);
-            // 
-            // MenuItemDelete
-            // 
-            this.MenuItemDelete.Name = "MenuItemDelete";
-            this.MenuItemDelete.Size = new System.Drawing.Size(240, 30);
-            this.MenuItemDelete.Text = "删除";
-            this.MenuItemDelete.Click += new System.EventHandler(this.MenuItemDelete_Click);
-            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -262,6 +262,12 @@ namespace SMS
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxSNO;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemAdd;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemEdit;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn SName;
@@ -269,11 +275,5 @@ namespace SMS
         private System.Windows.Forms.DataGridViewTextBoxColumn SBirthday;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeptNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemAdd;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemEdit;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemDelete;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

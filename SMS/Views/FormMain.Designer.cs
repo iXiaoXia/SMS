@@ -29,6 +29,7 @@ namespace SMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,9 @@ namespace SMS
             this.MenuItem71 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItem72 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -75,7 +78,7 @@ namespace SMS
             this.MenuItem7});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1478, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(1478, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,25 +123,25 @@ namespace SMS
             // MenuItem21
             // 
             this.MenuItem21.Name = "MenuItem21";
-            this.MenuItem21.Size = new System.Drawing.Size(182, 34);
+            this.MenuItem21.Size = new System.Drawing.Size(270, 34);
             this.MenuItem21.Text = "学院信息";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(267, 6);
             // 
             // MenuItem22
             // 
             this.MenuItem22.Name = "MenuItem22";
-            this.MenuItem22.Size = new System.Drawing.Size(182, 34);
+            this.MenuItem22.Size = new System.Drawing.Size(270, 34);
             this.MenuItem22.Text = "学生档案";
             this.MenuItem22.Click += new System.EventHandler(this.MenuItem22_Click);
             // 
             // MenuItem23
             // 
             this.MenuItem23.Name = "MenuItem23";
-            this.MenuItem23.Size = new System.Drawing.Size(182, 34);
+            this.MenuItem23.Size = new System.Drawing.Size(270, 34);
             this.MenuItem23.Text = "教师档案";
             // 
             // MenuItem3
@@ -155,24 +158,25 @@ namespace SMS
             // MenuItem31
             // 
             this.MenuItem31.Name = "MenuItem31";
-            this.MenuItem31.Size = new System.Drawing.Size(182, 34);
+            this.MenuItem31.Size = new System.Drawing.Size(270, 34);
             this.MenuItem31.Text = "课程信息";
+            this.MenuItem31.Click += new System.EventHandler(this.MenuItem31_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(267, 6);
             // 
             // MenuItem32
             // 
             this.MenuItem32.Name = "MenuItem32";
-            this.MenuItem32.Size = new System.Drawing.Size(182, 34);
+            this.MenuItem32.Size = new System.Drawing.Size(270, 34);
             this.MenuItem32.Text = "学生选课";
             // 
             // MenuItem33
             // 
             this.MenuItem33.Name = "MenuItem33";
-            this.MenuItem33.Size = new System.Drawing.Size(182, 34);
+            this.MenuItem33.Size = new System.Drawing.Size(270, 34);
             this.MenuItem33.Text = "教师授课";
             // 
             // MenuItem4
@@ -271,20 +275,37 @@ namespace SMS
             this.MenuItem72.Size = new System.Drawing.Size(218, 34);
             this.MenuItem72.Text = "关于系统";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1478, 897);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1478, 944);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1500, 1000);
             this.Name = "FormMain";
             this.Text = "学生成绩管理系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.QueryAccessibilityHelp += new System.Windows.Forms.QueryAccessibilityHelpEventHandler(this.FormMain_QueryAccessibilityHelp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +342,7 @@ namespace SMS
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

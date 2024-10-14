@@ -100,7 +100,7 @@ namespace SMS
         private void FormStudentEdit_Load(object sender, EventArgs e)
         {
             studentMS.BLL.department bllDept = new studentMS.BLL.department();
-            //this.comboBox1.DataSource = bllDept.GetAllList().Tables[0];
+            this.comboBox1.DataSource = bllDept.GetAllList().Tables[0];
             this.comboBox1.DisplayMember = "DeptName";
             this.comboBox1.ValueMember = "DeptNO";
             if (_sno == "")
