@@ -51,5 +51,14 @@ namespace SMS
             temp.BringToFront();
             this.setStartPosition(temp);
         }
+
+        private void MenuItem23_Click(object sender, EventArgs e)
+        {
+            FormTeacher temp = new FormTeacher(); //实例化
+            temp.MdiParent = this; //设置父窗体
+            temp.Show(); //调用方法Show把窗体展示到界面
+            temp.BringToFront();
+            this.setStartPosition(temp);
+        }
     }
 }

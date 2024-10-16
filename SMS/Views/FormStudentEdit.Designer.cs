@@ -40,7 +40,6 @@
             this.radioButtonBoy = new System.Windows.Forms.RadioButton();
             this.radioButtonGirl = new System.Windows.Forms.RadioButton();
             this.dateTimePickerSBirthday = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -67,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 192);
+            this.label3.Location = new System.Drawing.Point(127, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 18);
             this.label3.TabIndex = 1;
@@ -94,7 +93,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 268);
+            this.label6.Location = new System.Drawing.Point(127, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 18);
             this.label6.TabIndex = 1;
@@ -152,15 +151,6 @@
             this.dateTimePickerSBirthday.Size = new System.Drawing.Size(184, 28);
             this.dateTimePickerSBirthday.TabIndex = 4;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(468, 355);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // buttonOK
             // 
             this.buttonOK.Location = new System.Drawing.Point(298, 369);
@@ -197,7 +187,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePickerSBirthday);
             this.Controls.Add(this.radioButtonGirl);
             this.Controls.Add(this.radioButtonBoy);
@@ -236,7 +225,6 @@
         private System.Windows.Forms.RadioButton radioButtonBoy;
         private System.Windows.Forms.RadioButton radioButtonGirl;
         private System.Windows.Forms.DateTimePicker dateTimePickerSBirthday;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ComboBox comboBox1;

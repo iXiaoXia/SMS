@@ -44,6 +44,7 @@ namespace SMS
                     MessageBoxIcon.Information
                 );
                 this.buttonQuery_Click(this.buttonQuery, e);
+                this.DataGridViewReLocation(dataGridView1, "SNO", frm.SNO);
                 return;
             }
         }
@@ -97,6 +98,55 @@ namespace SMS
                         MessageBoxIcon.Error
                     );
                     return;
+                }
+            }
+        }
+
+        private void dataGridView1_DataBindingComplete(
+            object sender,
+            DataGridViewBindingCompleteEventArgs e
+        )
+        {
+            this.MenuItemEdit.Enabled = this.dataGridView1.Rows.Count > 0;
+            this.MenuItemDelete.Enabled = this.dataGridView1.Rows.Count > 0;
+        }
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.X > 0 && e.Y > 0)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="datagrid"></param>
+        /// <param name="filedName"></param>
+        /// <param name="keyValue"></param>
+        private void DataGridViewReLocation(
+            DataGridView datagrid,
+            string filedName,
+            string keyValue
+        )
+        {
+            if (
+                !string.IsNullOrEmpty(keyValue)
+                && !string.IsNullOrEmpty(filedName)
+                && datagrid != null
+            )
+            {
+                for (int i = 0; i < datagrid.Rows.Count; i++)
+                {
+                    if (datagrid.Rows[i].Cells[filedName].Value.ToString().Equals(keyValue))
+                    {
+                        datagrid.ClearSelection();
+                        datagrid.Rows[i].Selected = true;
+                        datagrid.FirstDisplayedScrollingRowIndex = i;
+                        break;
+                    }
                 }
             }
         }

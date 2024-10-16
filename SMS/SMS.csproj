@@ -46,16 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormTeacher.cs">
+    <Compile Include="BaseViews\FormEditBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTeacher.Designer.cs">
+    <Compile Include="BaseViews\FormEditBase.Designer.cs">
+      <DependentUpon>FormEditBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormCourseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCourseEdit.Designer.cs">
+      <DependentUpon>FormCourseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormTeacher.Designer.cs">
       <DependentUpon>FormTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormBase.cs">
+    <Compile Include="BaseViews\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormBase.Designer.cs">
+    <Compile Include="BaseViews\FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormCourse.cs">
@@ -84,10 +96,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormTeacher.resx">
+    <Compile Include="Views\FormTeacherEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormTeacherEdit.Designer.cs">
+      <DependentUpon>FormTeacherEdit.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseViews\FormEditBase.resx">
+      <DependentUpon>FormEditBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCourseEdit.resx">
+      <DependentUpon>FormCourseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormTeacher.resx">
       <DependentUpon>FormTeacher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormBase.resx">
+    <EmbeddedResource Include="BaseViews\FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormCourse.resx">
@@ -112,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\FormTeacherEdit.resx">
+      <DependentUpon>FormTeacherEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,7 +163,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.jpg" />
+    <Resource Include="Resources\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

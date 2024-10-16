@@ -25,5 +25,10 @@ namespace studentMS.BLL
         {
             return dal.GetCourseList(CNO, CName);
         }
+
+        public DataSet GetTeacherList(string TNO, string TName)
+        {
+            return dal.GetTeacherList(TNO, TName);
+        }
     }
 }

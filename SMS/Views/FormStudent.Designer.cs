@@ -37,18 +37,18 @@ namespace SMS
             this.textBoxSNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeptNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -130,6 +130,7 @@ namespace SMS
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 114);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -137,49 +138,8 @@ namespace SMS
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1230, 747);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemAdd,
-            this.toolStripSeparator1,
-            this.MenuItemEdit,
-            this.toolStripSeparator2,
-            this.MenuItemDelete});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 106);
-            // 
-            // MenuItemAdd
-            // 
-            this.MenuItemAdd.Name = "MenuItemAdd";
-            this.MenuItemAdd.Size = new System.Drawing.Size(116, 30);
-            this.MenuItemAdd.Text = "新增";
-            this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
-            // 
-            // MenuItemEdit
-            // 
-            this.MenuItemEdit.Name = "MenuItemEdit";
-            this.MenuItemEdit.Size = new System.Drawing.Size(116, 30);
-            this.MenuItemEdit.Text = "修改";
-            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(113, 6);
-            // 
-            // MenuItemDelete
-            // 
-            this.MenuItemDelete.Name = "MenuItemDelete";
-            this.MenuItemDelete.Size = new System.Drawing.Size(116, 30);
-            this.MenuItemDelete.Text = "删除";
-            this.MenuItemDelete.Click += new System.EventHandler(this.MenuItemDelete_Click);
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // SNO
             // 
@@ -219,7 +179,7 @@ namespace SMS
             // 
             // DeptNO
             // 
-            this.DeptNO.DataPropertyName = "DeptNO";
+            this.DeptNO.DataPropertyName = "DeptName";
             this.DeptNO.HeaderText = "所在学院";
             this.DeptNO.MinimumWidth = 6;
             this.DeptNO.Name = "DeptNO";
@@ -234,6 +194,51 @@ namespace SMS
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
             this.Address.Width = 125;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemAdd,
+            this.toolStripSeparator1,
+            this.MenuItemEdit,
+            this.toolStripSeparator2,
+            this.MenuItemDelete});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 106);
+            // 
+            // MenuItemAdd
+            // 
+            this.MenuItemAdd.Name = "MenuItemAdd";
+            this.MenuItemAdd.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemAdd.Text = "新增";
+            this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
+            // 
+            // MenuItemEdit
+            // 
+            this.MenuItemEdit.Enabled = false;
+            this.MenuItemEdit.Name = "MenuItemEdit";
+            this.MenuItemEdit.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemEdit.Text = "修改";
+            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(113, 6);
+            // 
+            // MenuItemDelete
+            // 
+            this.MenuItemDelete.Enabled = false;
+            this.MenuItemDelete.Name = "MenuItemDelete";
+            this.MenuItemDelete.Size = new System.Drawing.Size(116, 30);
+            this.MenuItemDelete.Text = "删除";
+            this.MenuItemDelete.Click += new System.EventHandler(this.MenuItemDelete_Click);
             // 
             // FormStudent
             // 

@@ -3,45 +3,31 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using studentMS.Model;
 
-namespace SMS
+namespace SMS.Views
 {
-    public partial class FormStudentEdit : Form
+    public partial class FormTeacherEdit : SMS.BaseViews.FormEditBase
     {
-        private string _sno = "";
+        private string _tno = "";
 
-        public string SNO
-        {
-            set { _sno = value; }
-            get { return _sno; }
-        }
-
-        public FormStudentEdit()
+        public FormTeacherEdit()
         {
             InitializeComponent();
         }
 
-        public FormStudentEdit(string sno)
+        public FormTeacherEdit(string tno)
         {
             InitializeComponent();
-            _sno = sno;
+            _tno = tno;
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonOK_Click(object sender, EventArgs e)
+        protected override void buttonOK_Click(object sender, EventArgs e)
         {
             string strExpression = "";
             //做数据校验
-            if (this.textBoxSNO.Text.Trim() == "")
+            if (this.textBox1.Text.Trim() == "")
             {
                 strExpression += "学号不能为空!\n";
             }
@@ -65,34 +51,28 @@ namespace SMS
                 );
                 return;
             }
-
-            //从界面获取数据并保存到Model里面的studentAdd对象
-            student studentAdd = new student();
-            studentAdd.SNO = this.textBoxSNO.Text.Trim();
-            studentAdd.SName = this.textBoxSName.Text.Trim();
+            studentMS.Model.teacher teacherAdd = new studentMS.Model.teacher();
+            teacherAdd.TNO = this.textBox1.Text.Trim();
+            teacherAdd.TName = this.textBoxSName.Text.Trim();
             if (this.radioButtonBoy.Checked)
-                studentAdd.SSex = "男";
+                teacherAdd.TSex = "男";
             else if (this.radioButtonGirl.Checked)
-                studentAdd.SSex = "女";
-            studentAdd.SBirthday = this.dateTimePickerSBirthday.Value;
-            studentAdd.Address = this.textBoxAddress.Text.Trim();
-            studentAdd.DeptNO = this.comboBox1.SelectedValue.ToString();
-            //调用BLL层的方法将数据保存到数据库
-            studentMS.BLL.student bll = new studentMS.BLL.student();
+                teacherAdd.TSex = "女";
+            teacherAdd.Address = this.textBoxAddress.Text.Trim();
+            teacherAdd.DeptNO = this.comboBox1.SelectedValue.ToString();
+            studentMS.BLL.teacher bll = new studentMS.BLL.teacher();
             try
             {
-                if (_sno == "")
-                    bll.Add(studentAdd);
+                if (_tno == "")
+                    bll.Add(teacherAdd);
                 else
-                    bll.Update(studentAdd);
+                    bll.Update(teacherAdd);
                 this.DialogResult = DialogResult.OK;
-
-                _sno = studentAdd.SNO;
             }
             catch (Exception ex)
             {
                 string str = "新增";
-                if (_sno != "")
+                if (_tno != "")
                     str = "修改";
                 MessageBox.Show(
                     this,
@@ -103,34 +83,37 @@ namespace SMS
                 );
                 return;
             }
+
+            //MessageBox.Show("父类Ok");
         }
 
-        private void FormStudentEdit_Load(object sender, EventArgs e)
+        protected override void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormTeacherEdit_Load(object sender, EventArgs e)
         {
             studentMS.BLL.department bllDept = new studentMS.BLL.department();
             this.comboBox1.DataSource = bllDept.GetAllList().Tables[0];
             this.comboBox1.DisplayMember = "DeptName";
             this.comboBox1.ValueMember = "DeptNO";
-            if (_sno == "")
+
+            if (_tno == "")
             {
-                this.Text = "新增学生档案信息";
+                this.Text = "新增教师档案信息";
             }
             else
             {
-                this.Text = "修改学生档案信息";
-                studentMS.BLL.student bll = new studentMS.BLL.student();
-                studentMS.Model.student studentAdd = bll.GetModel(_sno);
-                this.textBoxSNO.Text = studentAdd.SNO;
-                this.textBoxSName.Text = studentAdd.SName;
-                if (studentAdd.SSex == "男")
+                this.Text = "修改教师档案信息";
+                studentMS.BLL.teacher bll = new studentMS.BLL.teacher();
+                studentMS.Model.teacher studentAdd = bll.GetModel(_tno);
+                this.textBox1.Text = studentAdd.TNO;
+                this.textBoxSName.Text = studentAdd.TName;
+                if (studentAdd.TSex == "男")
                     this.radioButtonBoy.Checked = true;
-                else if (studentAdd.SSex == "女")
+                else if (studentAdd.TSex == "女")
                     this.radioButtonGirl.Checked = true;
-                try
-                {
-                    this.dateTimePickerSBirthday.Value = studentAdd.SBirthday.Value;
-                }
-                catch { }
                 this.comboBox1.SelectedValue = studentAdd.DeptNO.ToString();
                 this.textBoxAddress.Text = studentAdd.Address;
             }

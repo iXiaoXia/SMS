@@ -13,7 +13,9 @@ namespace studentMS.DAL
         public DataSet GetStudentList(string SNO, string SName)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select a.*,b.DeptName from student a,department b");
+            strSql.Append(
+                "select a.SNO,a.SName,a.SSex,a.SBirthday,a.Address,b.DeptName from student a,department b"
+            );
             strSql.Append(" where a.DeptNO=b.DeptNO and SNO like ?SNO and SName like ?SName");
             MySqlParameter[] parameters =
             {
@@ -38,6 +40,24 @@ namespace studentMS.DAL
             };
             parameters[0].Value = "%" + CNO + "%";
             parameters[1].Value = "%" + CName + "%";
+
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
+        }
+
+        public DataSet GetTeacherList(string TNO, string TName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(
+                "select a.TNO,a.TName,a.TSex,a.Address,b.DeptName from teacher a,department b"
+            );
+            strSql.Append("  where a.DeptNO=b.DeptNO and TNO like ?TNO and TName like ?TName");
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("?TNO", MySqlDbType.VarChar),
+                new MySqlParameter("?TName", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = "%" + TNO + "%";
+            parameters[1].Value = "%" + TName + "%";
 
             return DbHelperMySQL.Query(strSql.ToString(), parameters);
         }

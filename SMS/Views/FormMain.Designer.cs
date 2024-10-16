@@ -143,6 +143,7 @@ namespace SMS
             this.MenuItem23.Name = "MenuItem23";
             this.MenuItem23.Size = new System.Drawing.Size(270, 34);
             this.MenuItem23.Text = "教师档案";
+            this.MenuItem23.Click += new System.EventHandler(this.MenuItem23_Click);
             // 
             // MenuItem3
             // 

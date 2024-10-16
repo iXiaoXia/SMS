@@ -3,42 +3,43 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SMS.Views;
 
-namespace SMS.Views
+namespace SMS
 {
-    public partial class FormCourse : Form
+    public partial class FormTeacher : SMS.Views.FormBase
     {
-        public FormCourse()
+        public FormTeacher()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public override void button1_Click(object sender, EventArgs e)
         {
-            studentMS.BLL.core bll = new studentMS.BLL.core();
-            this.dataGridView1.DataSource = bll.GetCourseList(
+            //MessageBox.Show("重写代码");
+            //studentMS.BLL.teacher bll = new studentMS.BLL.teacher(); //实例化BLL层的对象
+            //this.dataGridView1.DataSource = bll.GetAllList().Tables[0].DefaultView;
+
+            studentMS.BLL.core bll = new studentMS.BLL.core(); //实例化BLL层的对象
+            this.dataGridView1.DataSource = bll.GetTeacherList(
                     this.textBox1.Text.Trim(),
-                    this.textBox2.Text.Trim()
+                    this.textBoxSName.Text.Trim()
                 )
                 .Tables[0]
                 .DefaultView;
         }
 
-        private void AddMenuItem_Click(object sender, EventArgs e)
+        private void AddStripMenuItem_Click(object sender, EventArgs e)
         {
-            //弹出新增界面
-            FormCourseEdit frm = new FormCourseEdit();
+            SMS.Views.FormTeacherEdit frm = new SMS.Views.FormTeacherEdit();
             frm.ShowDialog();
-
             if (frm.DialogResult == DialogResult.OK)
             {
                 MessageBox.Show(
                     this,
-                    "新增课程档案成功!\n",
+                    "新增教师档案成功!\n",
                     "友情提示",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -48,17 +49,17 @@ namespace SMS.Views
             }
         }
 
-        private void EditMenuItem_Click(object sender, EventArgs e)
+        private void EditStripMenuItem_Click(object sender, EventArgs e)
         {
-            string cno = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            FormCourseEdit frm = new FormCourseEdit(cno);
+            string tno = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            FormTeacherEdit frm = new FormTeacherEdit(tno);
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.OK)
             {
                 MessageBox.Show(
                     this,
-                    "修改课程档案成功!\n",
+                    "修改教师档案成功!\n",
                     "友情提示",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -68,7 +69,7 @@ namespace SMS.Views
             }
         }
 
-        private void DeleteMenuItem_Click(object sender, EventArgs e)
+        private void DeleteStripMenuItem_Click(object sender, EventArgs e)
         {
             if (
                 MessageBox.Show(
@@ -80,11 +81,11 @@ namespace SMS.Views
                 ) == DialogResult.OK
             )
             {
-                string sno = this.dataGridView1.SelectedRows[0].Cells["CNO"].Value.ToString();
-                studentMS.BLL.course bll = new studentMS.BLL.course(); //实例化BLL层的对象
+                string tno = this.dataGridView1.SelectedRows[0].Cells["TNO"].Value.ToString();
+                studentMS.BLL.teacher bll = new studentMS.BLL.teacher(); //实例化BLL层的对象
                 try
                 {
-                    bll.Delete(sno);
+                    bll.Delete(tno);
                     this.button1_Click(this.button1, e);
                 }
                 catch (Exception ex)
