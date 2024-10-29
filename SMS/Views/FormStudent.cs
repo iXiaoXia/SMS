@@ -17,6 +17,11 @@ namespace SMS
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 查询学生档案
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonQuery_Click(object sender, EventArgs e)
         {
             studentMS.BLL.core bll = new studentMS.BLL.core(); //实例化BLL层的对象
@@ -28,6 +33,11 @@ namespace SMS
                 .DefaultView;
         }
 
+        /// <summary>
+        /// 增加学生档案
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemAdd_Click(object sender, EventArgs e)
         {
             //弹出新增界面
@@ -49,6 +59,11 @@ namespace SMS
             }
         }
 
+        /// <summary>
+        /// 修改学生档案
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemEdit_Click(object sender, EventArgs e)
         {
             string sno = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -69,6 +84,11 @@ namespace SMS
             }
         }
 
+        /// <summary>
+        /// 删除学生档案
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemDelete_Click(object sender, EventArgs e)
         {
             if (
@@ -102,6 +122,11 @@ namespace SMS
             }
         }
 
+        /// <summary>
+        /// 数据绑定后，判断是否启用编辑和删除菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_DataBindingComplete(
             object sender,
             DataGridViewBindingCompleteEventArgs e
@@ -111,6 +136,11 @@ namespace SMS
             this.MenuItemDelete.Enabled = this.dataGridView1.Rows.Count > 0;
         }
 
+        /// <summary>
+        /// 右键菜单选中行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && e.X > 0 && e.Y > 0)
@@ -121,7 +151,7 @@ namespace SMS
         }
 
         /// <summary>
-        ///
+        /// 重新设置选中的行
         /// </summary>
         /// <param name="datagrid"></param>
         /// <param name="filedName"></param>

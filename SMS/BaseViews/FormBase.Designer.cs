@@ -40,9 +40,10 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1226, 114);
+            this.panel1.Size = new System.Drawing.Size(1230, 114);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -57,15 +58,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 34);
+            this.textBox1.Location = new System.Drawing.Point(144, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 28);
+            this.textBox1.Size = new System.Drawing.Size(140, 28);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 44);
+            this.label1.Location = new System.Drawing.Point(55, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 0;

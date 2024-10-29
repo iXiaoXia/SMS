@@ -18,10 +18,6 @@ namespace SMS
 
         public override void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("重写代码");
-            //studentMS.BLL.teacher bll = new studentMS.BLL.teacher(); //实例化BLL层的对象
-            //this.dataGridView1.DataSource = bll.GetAllList().Tables[0].DefaultView;
-
             studentMS.BLL.core bll = new studentMS.BLL.core(); //实例化BLL层的对象
             this.dataGridView1.DataSource = bll.GetTeacherList(
                     this.textBox1.Text.Trim(),

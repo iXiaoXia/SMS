@@ -58,6 +58,36 @@
     <Compile Include="Views\FormCourseEdit.Designer.cs">
       <DependentUpon>FormCourseEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormCS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCS.Designer.cs">
+      <DependentUpon>FormCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormInputScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormInputScore.Designer.cs">
+      <DependentUpon>FormInputScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRole.Designer.cs">
+      <DependentUpon>FormRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormScoreQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormScoreQuery.Designer.cs">
+      <DependentUpon>FormScoreQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormScoreStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormScoreStatistic.Designer.cs">
+      <DependentUpon>FormScoreStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +137,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormCourseEdit.resx">
       <DependentUpon>FormCourseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCS.resx">
+      <DependentUpon>FormCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormInputScore.resx">
+      <DependentUpon>FormInputScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRole.resx">
+      <DependentUpon>FormRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormScoreQuery.resx">
+      <DependentUpon>FormScoreQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormScoreStatistic.resx">
+      <DependentUpon>FormScoreStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormTeacher.resx">
       <DependentUpon>FormTeacher.cs</DependentUpon>

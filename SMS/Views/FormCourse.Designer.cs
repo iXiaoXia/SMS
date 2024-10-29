@@ -57,9 +57,10 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1204, 114);
+            this.panel1.Size = new System.Drawing.Size(1230, 114);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -75,7 +76,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(527, 40);
+            this.textBox2.Location = new System.Drawing.Point(524, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(257, 28);
             this.textBox2.TabIndex = 1;
@@ -90,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(446, 50);
+            this.label2.Location = new System.Drawing.Point(443, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 0;
@@ -114,7 +115,8 @@
             this.CName,
             this.Credit});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 123);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 114);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
@@ -156,36 +158,36 @@
             this.toolStripSeparator2,
             this.DeleteMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 139);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 106);
             // 
             // AddMenuItem
             // 
             this.AddMenuItem.Name = "AddMenuItem";
-            this.AddMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.AddMenuItem.Size = new System.Drawing.Size(116, 30);
             this.AddMenuItem.Text = "新增";
             this.AddMenuItem.Click += new System.EventHandler(this.AddMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(237, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
             // 
             // EditMenuItem
             // 
             this.EditMenuItem.Name = "EditMenuItem";
-            this.EditMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.EditMenuItem.Size = new System.Drawing.Size(116, 30);
             this.EditMenuItem.Text = "修改";
             this.EditMenuItem.Click += new System.EventHandler(this.EditMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(237, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(113, 6);
             // 
             // DeleteMenuItem
             // 
             this.DeleteMenuItem.Name = "DeleteMenuItem";
-            this.DeleteMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.DeleteMenuItem.Size = new System.Drawing.Size(116, 30);
             this.DeleteMenuItem.Text = "删除";
             this.DeleteMenuItem.Click += new System.EventHandler(this.DeleteMenuItem_Click);
             // 
@@ -197,7 +199,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "FormCourse";
-            this.Text = "CourseForm";
+            this.Text = "课程信息";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

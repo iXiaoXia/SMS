@@ -30,5 +30,35 @@ namespace studentMS.BLL
         {
             return dal.GetTeacherList(TNO, TName);
         }
+
+        public DataSet GetSelectedCourseList(string SNO)
+        {
+            return dal.GetSelectedCourseList(SNO);
+        }
+
+        public DataSet GetUnSelectedCourseList(string SNO)
+        {
+            return dal.GetUnSelectedCourseList(SNO);
+        }
+
+        public DataSet GetOneCourseStudentList(string CNO)
+        {
+            return dal.GetOneCourseStudentList(CNO);
+        }
+
+        public DataSet GetScoreList(string SNO, string SName, string CName)
+        {
+            return dal.GetScoreList(SNO, SName, CName);
+        }
+
+        /// <summary>
+        /// 根据课程名称获取成绩统计
+        /// </summary>
+        /// <param name="CName">课程名称</param>
+        /// <returns></returns>
+        public DataSet GetScoreStatisticList(string CName)
+        {
+            return dal.GetScoreStatisticList(CName);
+        }
     }
 }
