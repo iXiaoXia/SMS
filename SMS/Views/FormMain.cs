@@ -87,7 +87,7 @@ namespace SMS
             this.setStartPosition(form);
         }
 
-        private void 角色管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRole temp = new FormRole(); //实例化
             GetView(temp);

@@ -25,14 +25,16 @@ namespace studentMS.DAL
 		/// <summary>
 		/// 是否存在
 		/// </summary>
-		public bool Exists(int RoleID)
+		public bool Exists(int RoleID,string FID)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select count(1) from b_roleright");
-			strSql.Append(" where RoleID=?RoleID");
+			strSql.Append(" where RoleID=?RoleID and FID=?FID");
 			MySqlParameter[] parameters = {
-					new MySqlParameter("?RoleID", MySqlDbType.Int16)};
+					new MySqlParameter("?RoleID", MySqlDbType.Int16),
+					new MySqlParameter("?FID", MySqlDbType.VarChar)};
 			parameters[0].Value = RoleID;
+			parameters[1].Value = FID;
 
 			return DbHelperMySQL.Exists(strSql.ToString(),parameters);
 		}
@@ -63,8 +65,11 @@ namespace studentMS.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update b_roleright set ");
+
+			#warning 系统发现缺少更新的字段，请手工确认如此更新是否正确！
+			strSql.Append("RoleID=?RoleID,");
 			strSql.Append("FID=?FID");
-			strSql.Append(" where RoleID=?RoleID");
+			strSql.Append(" where RoleID=?RoleID and FID=?FID");
 			MySqlParameter[] parameters = {
 					new MySqlParameter("?RoleID", MySqlDbType.Int16),
 					new MySqlParameter("?FID", MySqlDbType.VarChar,20)};
@@ -78,42 +83,34 @@ namespace studentMS.DAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(int RoleID)
+		public bool Delete(int RoleID,string FID)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from b_roleright ");
-			strSql.Append(" where RoleID=?RoleID");
+			strSql.Append(" where RoleID=?RoleID and FID=?FID");
 			MySqlParameter[] parameters = {
-					new MySqlParameter("?RoleID", MySqlDbType.Int16)};
+					new MySqlParameter("?RoleID", MySqlDbType.Int16),
+					new MySqlParameter("?FID", MySqlDbType.VarChar)};
 			parameters[0].Value = RoleID;
+			parameters[1].Value = FID;
 
 			int rows=DbHelperMySQL.ExecuteSql(strSql.ToString(),parameters);
 			return (rows > 0);
 		}
 
 		/// <summary>
-		/// 批量删除数据
-		/// </summary>
-		public bool DeleteList(string RoleIDlist )
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from b_roleright ");
-			strSql.Append(" where RoleID in ("+RoleIDlist + ")  ");
-			int rows=DbHelperMySQL.ExecuteSql(strSql.ToString());
-			return (rows > 0);
-		}
-
-		/// <summary>
 		/// 获取单条记录详细信息
 		/// </summary>
-		public studentMS.Model.b_roleright GetModel(int RoleID)
+		public studentMS.Model.b_roleright GetModel(int RoleID,string FID)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select RoleID,FID from b_roleright ");
-			strSql.Append(" where RoleID=?RoleID");
+			strSql.Append(" where RoleID=?RoleID and FID=?FID");
 			MySqlParameter[] parameters = {
-					new MySqlParameter("?RoleID", MySqlDbType.Int16)};
+					new MySqlParameter("?RoleID", MySqlDbType.Int16),
+					new MySqlParameter("?FID", MySqlDbType.VarChar)};
 			parameters[0].Value = RoleID;
+			parameters[1].Value = FID;
 
 			studentMS.Model.b_roleright model=new studentMS.Model.b_roleright();
 			DataSet ds=DbHelperMySQL.Query(strSql.ToString(),parameters);

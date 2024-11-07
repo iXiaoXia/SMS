@@ -60,5 +60,15 @@ namespace studentMS.BLL
         {
             return dal.GetScoreStatisticList(CName);
         }
+
+        /// <summary>
+        /// 依据角色ID获取权限
+        /// </summary>
+        /// <param name="roleID">权限ID</param>
+        /// <returns></returns>
+        public DataSet GetRoleRightList(string roleID)
+        {
+            return dal.GetRoleRightList(roleID);
+        }
     }
 }

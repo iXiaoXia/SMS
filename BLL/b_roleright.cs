@@ -26,9 +26,9 @@ namespace studentMS.BLL
 		/// <summary>
 		/// 是否存在
 		/// </summary>
-		public bool Exists(int RoleID)
+		public bool Exists(int RoleID,string FID)
 		{
-			return dal.Exists(RoleID);
+			return dal.Exists(RoleID,FID);
 		}
 
 		/// <summary>
@@ -50,25 +50,17 @@ namespace studentMS.BLL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(int RoleID)
+		public bool Delete(int RoleID,string FID)
 		{
-			return dal.Delete(RoleID);
-		}
-
-		/// <summary>
-		/// 批量删除数据
-		/// </summary>
-		public bool DeleteList(string RoleIDlist )
-		{
-			return dal.DeleteList(RoleIDlist );
+			return dal.Delete(RoleID,FID);
 		}
 
 		/// <summary>
 		/// 获取单条记录详细信息
 		/// </summary>
-		public studentMS.Model.b_roleright GetModel(int RoleID)
+		public studentMS.Model.b_roleright GetModel(int RoleID,string FID)
 		{
-				return dal.GetModel(RoleID);
+				return dal.GetModel(RoleID,FID);
 		}
 
 		/// <summary>

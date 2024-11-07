@@ -76,6 +76,12 @@
     <Compile Include="Views\FormRole.Designer.cs">
       <DependentUpon>FormRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormRoleRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRoleRight.Designer.cs">
+      <DependentUpon>FormRoleRight.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormScoreQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormRole.resx">
       <DependentUpon>FormRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRoleRight.resx">
+      <DependentUpon>FormRoleRight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormScoreQuery.resx">
       <DependentUpon>FormScoreQuery.cs</DependentUpon>

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.RoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +40,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.权限管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +101,7 @@
             this.MenuItemDelete,
             this.权限管理ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 169);
             // 
             // MenuItemAdd
             // 
@@ -136,17 +136,19 @@
             // 权限管理ToolStripMenuItem
             // 
             this.权限管理ToolStripMenuItem.Name = "权限管理ToolStripMenuItem";
-            this.权限管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 30);
+            this.权限管理ToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
             this.权限管理ToolStripMenuItem.Text = "权限管理";
+            this.权限管理ToolStripMenuItem.Click += new System.EventHandler(this.权限管理ToolStripMenuItem_Click);
             // 
             // FormRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 691);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormRole";
-            this.Text = "FormRole";
+            this.Text = "角色管理";
             this.Load += new System.EventHandler(this.FormRole_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -157,7 +159,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
@@ -168,5 +169,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemDelete;
         private System.Windows.Forms.ToolStripMenuItem 权限管理ToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
