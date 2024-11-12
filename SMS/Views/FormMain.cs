@@ -51,7 +51,7 @@ namespace SMS
 
         private void MenuItem23_Click(object sender, EventArgs e)
         {
-            FormTeacher temp = new FormTeacher(); //实例化
+            SMS.Views.FormTeacher temp = new SMS.Views.FormTeacher(); //实例化
             GetView(temp);
         }
 
@@ -90,6 +90,24 @@ namespace SMS
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRole temp = new FormRole(); //实例化
+            GetView(temp);
+        }
+
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUser temp = new FormUser(); //实例化
+            GetView(temp);
+        }
+
+        private void MenuItem52_Click(object sender, EventArgs e)
+        {
+            FormCourseStatistic temp = new FormCourseStatistic(); //实例化
+            GetView(temp);
+        }
+
+        private void MenuItem21_Click(object sender, EventArgs e)
+        {
+            FormDept temp = new FormDept(); //实例化
             GetView(temp);
         }
     }

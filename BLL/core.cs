@@ -61,6 +61,11 @@ namespace studentMS.BLL
             return dal.GetScoreStatisticList(CName);
         }
 
+        public DataSet GetCourseStatisticList(string CName)
+        {
+            return dal.GetCourseStatisticList(CName);
+        }
+
         /// <summary>
         /// 依据角色ID获取权限
         /// </summary>
@@ -69,6 +74,27 @@ namespace studentMS.BLL
         public DataSet GetRoleRightList(string roleID)
         {
             return dal.GetRoleRightList(roleID);
+        }
+
+        /// <summary>
+        /// 依据UID模糊查询符合条件的数据集
+        /// </summary>
+        /// <param name="UID">用户名</param>
+        /// <returns></returns>
+        public DataSet GetUserList(string UID)
+        {
+            return dal.GetUserList(UID);
+        }
+
+        /// <summary>
+        /// 依据用户名和密码查询该用户是否存在
+        /// </summary>
+        /// <param name="UID">用户名</param>
+        /// <param name="UCode">密码</param>
+        /// <returns></returns>
+        public bool ExistUIDUCode(string UID, string UCode)
+        {
+            return dal.ExistUIDUCode(UID, UCode);
         }
     }
 }

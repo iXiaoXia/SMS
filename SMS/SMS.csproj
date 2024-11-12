@@ -58,17 +58,35 @@
     <Compile Include="Views\FormCourseEdit.Designer.cs">
       <DependentUpon>FormCourseEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormCourseStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCourseStatistic.Designer.cs">
+      <DependentUpon>FormCourseStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormCS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormCS.Designer.cs">
       <DependentUpon>FormCS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormDept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormDept.Designer.cs">
+      <DependentUpon>FormDept.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormInputScore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormInputScore.Designer.cs">
       <DependentUpon>FormInputScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormRole.cs">
       <SubType>Form</SubType>
@@ -94,10 +112,10 @@
     <Compile Include="Views\FormScoreStatistic.Designer.cs">
       <DependentUpon>FormScoreStatistic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormTeacher.cs">
+    <Compile Include="BackFile\FormTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormTeacher.Designer.cs">
+    <Compile Include="BackFile\FormTeacher.Designer.cs">
       <DependentUpon>FormTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseViews\FormBase.cs">
@@ -132,11 +150,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FormTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormTeacher.Designer.cs">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormTeacherEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormTeacherEdit.Designer.cs">
       <DependentUpon>FormTeacherEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaseViews\FormEditBase.resx">
       <DependentUpon>FormEditBase.cs</DependentUpon>
@@ -144,11 +174,20 @@
     <EmbeddedResource Include="Views\FormCourseEdit.resx">
       <DependentUpon>FormCourseEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCourseStatistic.resx">
+      <DependentUpon>FormCourseStatistic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormCS.resx">
       <DependentUpon>FormCS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormDept.resx">
+      <DependentUpon>FormDept.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormInputScore.resx">
       <DependentUpon>FormInputScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormRole.resx">
       <DependentUpon>FormRole.cs</DependentUpon>
@@ -162,7 +201,7 @@
     <EmbeddedResource Include="Views\FormScoreStatistic.resx">
       <DependentUpon>FormScoreStatistic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormTeacher.resx">
+    <EmbeddedResource Include="BackFile\FormTeacher.resx">
       <DependentUpon>FormTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseViews\FormBase.resx">
@@ -190,8 +229,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\FormTeacher.resx">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormTeacherEdit.resx">
       <DependentUpon>FormTeacherEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

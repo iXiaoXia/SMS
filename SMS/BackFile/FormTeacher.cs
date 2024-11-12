@@ -5,8 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using SMS.Views;
 
-namespace SMS.Views
+namespace SMS
 {
     public partial class FormTeacher : SMS.Views.FormBase
     {

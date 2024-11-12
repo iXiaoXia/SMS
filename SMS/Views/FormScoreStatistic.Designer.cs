@@ -42,23 +42,22 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Size = new System.Drawing.Size(1230, 114);
+            this.panel1.Size = new System.Drawing.Size(1230, 147);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(765, 29);
-            this.button1.Text = "统计";
+            this.button1.Location = new System.Drawing.Point(814, 41);
+            this.button1.Text = "统  计";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(131, 51);
+            this.label1.Location = new System.Drawing.Point(156, 71);
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.Text = "课程名称";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(246, 41);
+            this.textBox1.Location = new System.Drawing.Point(271, 61);
             this.textBox1.Size = new System.Drawing.Size(187, 28);
             // 
             // dataGridView1
@@ -73,12 +72,12 @@
             this.ScoreMin,
             this.ScoreAvg});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 114);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 147);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1230, 747);
+            this.dataGridView1.Size = new System.Drawing.Size(1230, 714);
             this.dataGridView1.TabIndex = 2;
             // 
             // SNO

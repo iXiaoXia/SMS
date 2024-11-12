@@ -50,8 +50,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Size = new System.Drawing.Size(1230, 114);
+            this.panel1.Size = new System.Drawing.Size(1230, 117);
             this.panel1.Controls.SetChildIndex(this.label1, 0);
             this.panel1.Controls.SetChildIndex(this.textBox1, 0);
             this.panel1.Controls.SetChildIndex(this.button1, 0);
@@ -88,12 +87,12 @@
             this.CName,
             this.Score});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 114);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 117);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1230, 747);
+            this.dataGridView1.Size = new System.Drawing.Size(1230, 744);
             this.dataGridView1.TabIndex = 1;
             // 
             // SNO
@@ -182,12 +181,12 @@
             this.textBox3.Size = new System.Drawing.Size(170, 28);
             this.textBox3.TabIndex = 4;
             // 
-            // FormScoreQuety
+            // FormScoreQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.ClientSize = new System.Drawing.Size(1230, 861);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FormScoreQuety";
+            this.Name = "FormScoreQuery";
             this.Text = "成绩查询";
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
