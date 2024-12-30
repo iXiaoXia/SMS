@@ -41,8 +41,10 @@
             this.MenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.权限管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -101,18 +103,19 @@
             this.MenuItemDelete,
             this.权限管理ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 169);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
             // 
             // MenuItemAdd
             // 
             this.MenuItemAdd.Name = "MenuItemAdd";
-            this.MenuItemAdd.Size = new System.Drawing.Size(152, 30);
+            this.MenuItemAdd.Size = new System.Drawing.Size(240, 30);
             this.MenuItemAdd.Text = "新增";
+            this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(237, 6);
             // 
             // MenuItemEdit
             // 
@@ -120,11 +123,12 @@
             this.MenuItemEdit.Name = "MenuItemEdit";
             this.MenuItemEdit.Size = new System.Drawing.Size(152, 30);
             this.MenuItemEdit.Text = "修改";
+            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(237, 6);
             // 
             // MenuItemDelete
             // 
@@ -132,6 +136,7 @@
             this.MenuItemDelete.Name = "MenuItemDelete";
             this.MenuItemDelete.Size = new System.Drawing.Size(152, 30);
             this.MenuItemDelete.Text = "删除";
+            this.MenuItemDelete.Click += new System.EventHandler(this.MenuItemDelete_Click);
             // 
             // 权限管理ToolStripMenuItem
             // 
@@ -139,6 +144,11 @@
             this.权限管理ToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
             this.权限管理ToolStripMenuItem.Text = "权限管理";
             this.权限管理ToolStripMenuItem.Click += new System.EventHandler(this.权限管理ToolStripMenuItem_Click);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // FormRole
             // 
@@ -152,6 +162,7 @@
             this.Load += new System.EventHandler(this.FormRole_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,5 +181,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemDelete;
         private System.Windows.Forms.ToolStripMenuItem 权限管理ToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }

@@ -251,6 +251,7 @@ namespace SMS
             this.Name = "FormStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "学生档案";
+            this.Load += new System.EventHandler(this.FormStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

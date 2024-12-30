@@ -105,6 +105,8 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1230, 730);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // TNO
             // 
@@ -159,26 +161,28 @@
             this.EditStripMenuItem,
             this.DeleteStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 127);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 94);
             // 
             // AddStripMenuItem
             // 
             this.AddStripMenuItem.Name = "AddStripMenuItem";
-            this.AddStripMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.AddStripMenuItem.Size = new System.Drawing.Size(116, 30);
             this.AddStripMenuItem.Text = "新增";
             this.AddStripMenuItem.Click += new System.EventHandler(this.AddStripMenuItem_Click);
             // 
             // EditStripMenuItem
             // 
+            this.EditStripMenuItem.Enabled = false;
             this.EditStripMenuItem.Name = "EditStripMenuItem";
-            this.EditStripMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.EditStripMenuItem.Size = new System.Drawing.Size(116, 30);
             this.EditStripMenuItem.Text = "修改";
             this.EditStripMenuItem.Click += new System.EventHandler(this.EditStripMenuItem_Click);
             // 
             // DeleteStripMenuItem
             // 
+            this.DeleteStripMenuItem.Enabled = false;
             this.DeleteStripMenuItem.Name = "DeleteStripMenuItem";
-            this.DeleteStripMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.DeleteStripMenuItem.Size = new System.Drawing.Size(116, 30);
             this.DeleteStripMenuItem.Text = "删除";
             this.DeleteStripMenuItem.Click += new System.EventHandler(this.DeleteStripMenuItem_Click);
             // 
@@ -189,6 +193,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormTeacher";
             this.Text = "教师档案";
+            this.Load += new System.EventHandler(this.FormTeacher_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.panel1.ResumeLayout(false);

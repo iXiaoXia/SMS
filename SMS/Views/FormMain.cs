@@ -18,6 +18,14 @@ namespace SMS
             InitializeComponent();
         }
 
+        private void GetView(Form form)
+        {
+            form.MdiParent = this; //设置父窗体
+            form.Show(); //调用方法Show把窗体展示到界面
+            form.BringToFront();
+            this.setStartPosition(form);
+        }
+
         private void MenuItem22_Click(object sender, EventArgs e)
         {
             FormStudent temp = new FormStudent(); //实例化
@@ -79,14 +87,6 @@ namespace SMS
             GetView(temp);
         }
 
-        private void GetView(Form form)
-        {
-            form.MdiParent = this; //设置父窗体
-            form.Show(); //调用方法Show把窗体展示到界面
-            form.BringToFront();
-            this.setStartPosition(form);
-        }
-
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRole temp = new FormRole(); //实例化
@@ -108,6 +108,59 @@ namespace SMS
         private void MenuItem21_Click(object sender, EventArgs e)
         {
             FormDept temp = new FormDept(); //实例化
+            GetView(temp);
+        }
+
+        /// <summary>
+        /// 重新登录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem11_Click(object sender, EventArgs e)
+        {
+            //关闭现在所有的窗体
+            //提示是否确定要重新登录
+            if (
+                MessageBox.Show(
+                    "确定要重新登录吗？",
+                    "提示",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information
+                ) == DialogResult.OK
+            )
+            {
+                int Count = Application.OpenForms.Count;
+                for (int i = Count - 1; i >= 0; i--)
+                {
+                    Application.OpenForms[i].Close();
+                }
+
+                Application.Restart(); // 重新启动应用
+            }
+        }
+
+        /// <summary>
+        /// 安全退出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem12_Click(object sender, EventArgs e)
+        {
+            //提示是否确定要退出
+            if (
+                MessageBox.Show(
+                    "确定要退出吗？",
+                    "提示",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information
+                ) == DialogResult.OK
+            )
+                Application.Exit();
+        }
+
+        private void toolStripMenuItem23_Click(object sender, EventArgs e)
+        {
+            FormGradeChart temp = new FormGradeChart(); //实例化
             GetView(temp);
         }
     }

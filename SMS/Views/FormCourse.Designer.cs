@@ -118,6 +118,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 114);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -130,6 +131,7 @@
             this.CNO.HeaderText = "课程编号";
             this.CNO.MinimumWidth = 8;
             this.CNO.Name = "CNO";
+            this.CNO.ReadOnly = true;
             this.CNO.Width = 150;
             // 
             // CName
@@ -138,6 +140,7 @@
             this.CName.HeaderText = "课程名称";
             this.CName.MinimumWidth = 8;
             this.CName.Name = "CName";
+            this.CName.ReadOnly = true;
             this.CName.Width = 150;
             // 
             // Credit
@@ -146,6 +149,7 @@
             this.Credit.HeaderText = "学分";
             this.Credit.MinimumWidth = 8;
             this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
             this.Credit.Width = 150;
             // 
             // contextMenuStrip1

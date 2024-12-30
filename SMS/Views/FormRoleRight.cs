@@ -142,5 +142,11 @@ namespace SMS.Views
                     this.DialogResult = DialogResult.OK; //设置给主窗体返回值
             }
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            //取消按钮
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }

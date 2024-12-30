@@ -12,6 +12,10 @@ namespace SMS
 {
     public partial class FormStudent : Form
     {
+        private bool rightAdd,
+            rightEdit,
+            rightDelete;
+
         public FormStudent()
         {
             InitializeComponent();
@@ -132,8 +136,18 @@ namespace SMS
             DataGridViewBindingCompleteEventArgs e
         )
         {
-            this.MenuItemEdit.Enabled = this.dataGridView1.Rows.Count > 0;
-            this.MenuItemDelete.Enabled = this.dataGridView1.Rows.Count > 0;
+            this.MenuItemEdit.Enabled = this.dataGridView1.Rows.Count > 0 && rightEdit;
+            this.MenuItemDelete.Enabled = this.dataGridView1.Rows.Count > 0 && rightDelete;
+        }
+
+        private void FormStudent_Load(object sender, EventArgs e)
+        {
+            studentMS.BLL.core core = new studentMS.BLL.core(); //实例化BLL层的对象
+            rightAdd = core.HaveRight("2201");
+            rightEdit = core.HaveRight("2202");
+            rightDelete = core.HaveRight("2203");
+
+            this.MenuItemAdd.Enabled = rightAdd;
         }
 
         /// <summary>

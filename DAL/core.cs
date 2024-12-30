@@ -202,16 +202,57 @@ namespace studentMS.DAL
                 return true;
         }
 
-        public DataSet GetDeptList(String DeptName)
+        public DataSet GetDeptList(string DeptName)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT d.DeptNO, d.DeptName,COUNT(s.SNO) AS StudentCount ");
-            strSql.Append(" FROM course c");
-            strSql.Append(" LEFT JOIN s_c s ON c.CNO = s.CNO");
+            strSql.Append("select b.DeptNO,b.DeptName from department b");
+            strSql.Append(" where DeptName like ?DeptName");
+            MySqlParameter[] parameters = { new MySqlParameter("?DeptName", MySqlDbType.VarChar), };
+            parameters[0].Value = "%" + DeptName + "%";
 
-            strSql.Append(" GROUP BY c.CNO, c.CName");
-            if (!string.IsNullOrEmpty(DeptName))
-                strSql.Append(" Having  c.CName like '%" + DeptName + "%';");
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
+        }
+
+        /// <summary>
+        /// 获取用户user的权限列表
+        /// </summary>
+        /// <param name="user">用户名</param>
+        /// <returns></returns>
+        public DataSet GetRightByUser(string user)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT FID from b_roleright ");
+            strSql.Append(" where RoleID in (SELECT RoleID from b_user where UID='" + user + "')");
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 根据roleID获取权限
+        /// </summary>
+        /// <param name="roleID"></param>
+        /// <returns></returns>
+        public DataSet GetRightByRoleID(string roleID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT FID from b_roleright ");
+            strSql.Append(" where RoleID ='" + roleID + "'");
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 获取成绩分布情况
+        /// </summary>
+        /// <param name="CNO"></param>
+        /// <returns></returns>
+        public DataSet GetGradeDistribution(string CNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(
+                "SELECT SUM(CASE WHEN Score < 60 THEN 1 ELSE 0 END) AS value1,SUM(CASE WHEN Score BETWEEN 60 AND 85 THEN 1 ELSE 0 END) AS value2,SUM(CASE WHEN Score > 85 THEN 1 ELSE 0 END) AS value3"
+            );
+
+            strSql.Append(" FROM s_c");
+            strSql.Append(" WHERE CNO = '" + CNO + "'");
             return DbHelperMySQL.Query(strSql.ToString());
         }
     }

@@ -17,6 +17,14 @@ namespace SMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            NeedVerifyCode();
+            //new studentMS.BLL.core().GetRightByUser("xzz");
+            //Application.Run(new FormGradeChart());
+        }
+
+        //需要验证码
+        public static void NeedVerifyCode()
+        {
             //登录
             FormLogin login = new FormLogin();
             if (login.ShowDialog() == DialogResult.OK)

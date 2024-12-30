@@ -10,6 +10,8 @@ namespace studentMS.BLL
     {
         private readonly studentMS.DAL.core dal = new studentMS.DAL.core();
 
+        private static string UserRight = ""; //保存登录用户的所有权限
+
         /// <summary>
         /// 根据学号和姓名查询学生信息
         /// </summary>
@@ -95,6 +97,62 @@ namespace studentMS.BLL
         public bool ExistUIDUCode(string UID, string UCode)
         {
             return dal.ExistUIDUCode(UID, UCode);
+        }
+
+        /// <summary>
+        /// 获取用户user的权限列表
+        /// </summary>
+        /// <param name="user">用户名</param>
+        /// <returns></returns>
+        public void GetRightByUser(string user)
+        {
+            UserRight = ","; //初始化
+
+            //从数据库中获取登录用户的所有权限列表
+            DataTable tb_rigth = dal.GetRightByUser(user).Tables[0];
+
+            foreach (DataRow row in tb_rigth.Rows)
+            {
+                UserRight += row["FID"].ToString() + ",";
+            }
+        }
+
+        /// <summary>
+        /// 根据roleID获取权限
+        /// </summary>
+        /// <param name="roleID"></param>
+        /// <returns></returns>
+        public void GetRightByRoleID(string roleID)
+        {
+            UserRight = ","; //初始化
+
+            //从数据库中获取登录用户的所有权限列表
+            DataTable tb_rigth = dal.GetRightByRoleID(roleID).Tables[0];
+
+            foreach (DataRow row in tb_rigth.Rows)
+            {
+                UserRight += row["FID"].ToString() + ",";
+            }
+        }
+
+        /// <summary>
+        /// 判断当前登录用户是否拥有编号为FID的权限
+        /// </summary>
+        /// <param name="rightID"></param>
+        /// <returns></returns>
+        public bool HaveRight(string FID)
+        {
+            return UserRight.Contains("," + FID + ",");
+        }
+
+        public DataSet GetDeptList(string DeptName)
+        {
+            return dal.GetDeptList(DeptName);
+        }
+
+        public DataSet GetGradeDistribution(string CNO)
+        {
+            return dal.GetGradeDistribution(CNO);
         }
     }
 }
