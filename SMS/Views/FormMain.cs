@@ -163,5 +163,17 @@ namespace SMS
             FormGradeChart temp = new FormGradeChart(); //实例化
             GetView(temp);
         }
+
+        private void MenuItem71_Click(object sender, EventArgs e)
+        {
+            FormManual temp = new FormManual(); //实例化
+            GetView(temp);
+        }
+
+        private void MenuItem72_Click(object sender, EventArgs e)
+        {
+            FormAboutSystem temp = new FormAboutSystem(); //实例化
+            GetView(temp);
+        }
     }
 }

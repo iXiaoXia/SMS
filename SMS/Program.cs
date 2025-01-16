@@ -19,7 +19,7 @@ namespace SMS
             Application.SetCompatibleTextRenderingDefault(false);
             NeedVerifyCode();
             //new studentMS.BLL.core().GetRightByUser("xzz");
-            //Application.Run(new FormGradeChart());
+            //Application.Run(new FormMain());
         }
 
         //需要验证码
