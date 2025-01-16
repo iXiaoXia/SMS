@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SMS.Views;
 
 namespace SMS
 {
@@ -16,7 +17,20 @@ namespace SMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            NeedVerifyCode();
+            //new studentMS.BLL.core().GetRightByUser("xzz");
+            //Application.Run(new FormMain());
+        }
+
+        //需要验证码
+        public static void NeedVerifyCode()
+        {
+            //登录
+            FormLogin login = new FormLogin();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormMain());
+            }
         }
     }
 }

@@ -114,6 +114,7 @@
     <Compile Include="department.cs" />
     <Compile Include="student.cs" />
     <Compile Include="s_c.cs" />
+    <Compile Include="teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
