@@ -12,6 +12,7 @@ namespace SMS
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
+        /// test git pull origin master
         [STAThread]
         static void Main()
         {
